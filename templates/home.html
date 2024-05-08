@@ -1,56 +1,97 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Health Prediction</title>
-<style>
-    body {
-        font-family: Arial, sans-serif;
-        margin: 0;
-        padding: 20px;
-        background-color:#EEEEEE;
-    }
-    form {
-        max-width: 400px;
-        margin: auto;
-    }
-    input[type="text"], input[type="number"] {
-        width: 100%;
-        padding: 10px;
-        margin: 5px 0;
-        box-sizing: border-box;
-    }
-    input[type="submit"] {
-        background-color: #4CAF50;
-        color: white;
-        padding: 10px 20px;
-        border: none;
-        border-radius: 4px;
-        cursor: pointer;
-        width: 100%;
-    }
-    input[type="submit"]:hover {
-        background-color: #45a049;
-    }
-</style>
-</head>
-<body>
-    <h2 style="text-align:center;">HEALTH PREDICTION</h2>
-    <form action="/predict" method="post">
-        <label for="temperature">Room Temperature (°C):</label>
-        <input type="number" id="temperature" name="temperature" placeholder="Enter temperature" required>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Health Prediction</title>
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                margin: 0;
+                padding: 20px;
+                background-color: #eeeeee;
+            }
+            form {
+                max-width: 400px;
+                margin: auto;
+            }
+            input[type="text"],
+            input[type="number"] {
+                width: 100%;
+                padding: 10px;
+                margin: 5px 0;
+                box-sizing: border-box;
+            }
+            input[type="submit"] {
+                background-color: #4caf50;
+                color: white;
+                padding: 10px 20px;
+                border: none;
+                border-radius: 4px;
+                cursor: pointer;
+                width: 100%;
+            }
+            input[type="submit"]:hover {
+                background-color: #45a049;
+            }
+            .container {
+                position: relative; /* Ensure the container is positioned relative */
+                width: 300px; /* Set the width of the container */
+                height: 200px; /* Set the height of the container */
+                border: 1px solid #ccc; /* Just for visualization */
+            }
 
-        <label for="humidity">Room Humidity :</label>
-        <input type="number" id="humidity" name="humidity" placeholder="Enter humidity" required>
+            .container img {
+                position: absolute; /* Position the image absolutely within the container */
+                top: 0; /* Align to the top of the container */
+                left: 0; /* Align to the left of the container */
+            }
+        </style>
+    </head>
+    <body>
+        <img style="display: block; width: 100px; height: 80px; margin: 0 auto;" src="{{ url_for('static', filename='bot.png') }}" alt="Bot Logo"
+                style="width: 100px; max-width: 100px;"">
+        </div>
+            <h2 style="text-align: center">HEALTH PREDICTION</h2>
+            <form action="/predict" method="post">
+                <label for="temperature">Room Temperature (°C):</label>
+                <input
+                    type="number"
+                    id="temperature"
+                    name="temperature"
+                    placeholder="Enter temperature"
+                    required
+                />
 
-        <label for="pulseRate">Pulse Rate (bpm):</label>
-        <input type="number" id="pulseRate" name="pulseRate" placeholder="Enter pulse rate" required>
+                <label for="humidity">Room Humidity :</label>
+                <input
+                    type="number"
+                    id="humidity"
+                    name="humidity"
+                    placeholder="Enter humidity"
+                    required
+                />
 
-        <label for="spo2">SpO2 :</label>
-        <input type="number" id="spo2" name="spo2" placeholder="Enter SpO2" required>
+                <label for="pulseRate">Pulse Rate (bpm):</label>
+                <input
+                    type="number"
+                    id="pulseRate"
+                    name="pulseRate"
+                    placeholder="Enter pulse rate"
+                    required
+                />
 
-        <input type="submit" value="Predict">
-    </form>
-</body>
+                <label for="spo2">SpO2 :</label>
+                <input
+                    type="number"
+                    id="spo2"
+                    name="spo2"
+                    placeholder="Enter SpO2"
+                    required
+                />
+
+                <input type="submit" value="Predict" />
+            </form>
+        
+    </body>
 </html>
