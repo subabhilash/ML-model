@@ -9,6 +9,7 @@
         font-family: Arial, sans-serif;
         margin: 0;
         padding: 20px;
+        background-color:#EEEEEE;
     }
     form {
         max-width: 400px;
@@ -35,18 +36,18 @@
 </style>
 </head>
 <body>
-    <h2>Health Prediction</h2>
+    <h2 style="text-align:center;">HEALTH PREDICTION</h2>
     <form action="/predict" method="post">
         <label for="temperature">Room Temperature (°C):</label>
         <input type="number" id="temperature" name="temperature" placeholder="Enter temperature" required>
 
-        <label for="humidity">Room Humidity (%):</label>
+        <label for="humidity">Room Humidity :</label>
         <input type="number" id="humidity" name="humidity" placeholder="Enter humidity" required>
 
         <label for="pulseRate">Pulse Rate (bpm):</label>
         <input type="number" id="pulseRate" name="pulseRate" placeholder="Enter pulse rate" required>
 
-        <label for="spo2">SpO2 (%):</label>
+        <label for="spo2">SpO2 :</label>
         <input type="number" id="spo2" name="spo2" placeholder="Enter SpO2" required>
 
         <input type="submit" value="Predict">
