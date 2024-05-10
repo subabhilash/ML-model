@@ -28,9 +28,9 @@ def predict():
 
     # Create a DataFrame with the form data
     input_data = pd.DataFrame({
-        'room temp': [temperature],
-        'room humidity': [humidity],
-        'pulse rste': [pulse_rate],
+        'room_temp': [temperature],
+        'room_humidity': [humidity],
+        'pulse_rate': [pulse_rate],
         'spo2': [spo2]
     })
 
